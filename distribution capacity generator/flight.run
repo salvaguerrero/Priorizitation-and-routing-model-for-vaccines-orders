@@ -1,0 +1,29 @@
+reset;
+load amplcsv.dll; 
+model flight.mod;
+model flight.dat;
+
+
+table dc IN "amplcsv" "dc.csv": [Co, Man], dc;
+table demand IN "amplcsv" "demand.csv": [Co ,Vac], d;
+table man IN "amplcsv" "man.csv": [Man, Vac], vc, o;
+
+
+read table dc;
+read table demand;
+read table man;
+
+display Man;
+display Co;
+display dc;
+display o;
+display d;
+display vc;
+
+option solver cplex;
+solve;
+
+table Results OUT "amplcsv" "flights.csv":
+   [Co,Man,Vac], X;
+
+write table Results;

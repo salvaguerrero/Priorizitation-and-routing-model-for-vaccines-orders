@@ -1,0 +1,4 @@
+data;
+set Co:=  SOM PNG SSD TCD CRI NGA ETH YEM COG SLE COD GIN HTI MDG SYR;
+set Man:= JL BB SII AJ BF BE;
+set Vac:= BCG DTwP Measles;
